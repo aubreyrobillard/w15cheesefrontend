@@ -22,7 +22,7 @@ export const createAction= async ({request}) => {
     })
 
     //redirect the user back to the index route
-    return redirect('/cheese')
+    return redirect('/')
 }
 
 export const updateAction = async ({request, params}) => {
@@ -43,8 +43,9 @@ export const updateAction = async ({request, params}) => {
         // send the json string of the updatedPerson object
         body: JSON.stringify(updatedCheese)
     })
+    
     // redirect back to show page frontend route
-    return redirect(`cheese/${id}`)
+    return redirect(`/${id}`)
 }
 
 export const deleteAction = async ({params}) => {
@@ -55,5 +56,5 @@ export const deleteAction = async ({params}) => {
         method: 'DELETE'
     })
     // redirect back to the frontend index route
-    return redirect('/cheese')
+    return redirect('/')
 }
